@@ -1,0 +1,84 @@
+.settings{
+    @include flex(flex, space-between, center, row, nowrap);
+    width: 100%;
+    padding-bottom: $gap-v;
+    border-bottom: 1px solid rgba($black, .2);
+
+    @media(max-width: $mq-0){
+        border-bottom: none;
+        padding:  0 $gap-v / 2;
+        height: 50px;
+    }
+    &__search{
+        @include flex(flex, flex-start, center, row, nowrap);
+
+        @media(max-width: $mq-0){ display: none;}
+    }
+    &__icons{
+        display: none;
+        @media(max-width: $mq-0){ @include flex(flex, center, center, row, nowrap);}
+    }
+    &__icon{ margin-left: 10px; }
+    &__logo{
+        width: 160px;
+        margin-left: 130px;
+        object-fit: cover;
+        @media(max-width: $mq-0){
+            width: auto;
+            height: 15px;
+            margin-left: 0;
+        }
+    }
+}
+.account{
+    @include flex(flex, space-between, center, row, nowrap);
+    &__icon{ margin: 0 8px; }
+    &__link{
+        margin: 0 8px;
+        @media(max-width: $mq-0){ display: none;}
+    }
+}
+.menu{
+    @include flex(flex, center, center, row, nowrap);
+    width: 100%;
+    margin-top: 15px;
+    position: relative;
+    &__list{ @include flex(flex, space-between, center, row, nowrap); }
+    &__item{
+        height: 100%;
+        padding-bottom: $gap-v;
+    }
+    &__link{ margin: 0 10px; }
+
+    @media(max-width: $mq-0){ display: none; }
+}
+.sub-menu{
+    &__container{
+        @include flex(flex, flex-start, flex-start, row, nowrap);
+        position: absolute;
+        top: 40px;
+        left: 0;
+        width: 100%;
+        z-index: 1000;
+        border-top: 1px solid rgba($black, .2);
+
+        opacity: 0;
+        visibility: hidden;
+        background-color: $white;
+        padding: $gap-v $gap-h;
+    }
+    &__list{
+        margin-right: $gap-h;
+        padding: 0;
+    }
+    &__link{
+        text-transform: capitalize;
+        line-height: 21px;
+    }
+}
+.menu__item:hover {text-decoration: line-through;}
+.menu__item:hover > .sub-menu__container{
+    opacity: 1;
+    visibility: visible;
+    transition: $transition .2s;
+}

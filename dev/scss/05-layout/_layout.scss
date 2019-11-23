@@ -1,0 +1,57 @@
+.header{
+    @include flex(flex, flex-start, flex-start, column, wrap);
+    width: 100%;
+    padding: $gap-v $gap-h 0;
+    border-bottom: 1px solid rgba($black, .2);
+
+    @media(max-width: $mq-0){ padding: 0 ;}
+}
+.banner{
+    width: 100%;
+    min-height: 450px;
+    height: 70vh;
+    margin-bottom: $gap-v;
+
+    background-image: url("../img/banner.webp");
+    background-size: cover;
+    background-position: center;
+
+    @media(max-width: $mq-1){ height: 400px;}
+}
+.magazine{
+    @include flex(flex, flex-start, center, column, wrap);
+    padding: 10px $gap-h;
+}
+.news{
+    @include flex(flex, center, flex-start, column, wrap);
+    width: 100%;
+    height: 370px;
+    margin-bottom: $gap-v;
+    padding: $gap-v $gap-h;
+    padding-left: $gap-h * 3;
+
+    background-image: url("../img/news.webp");
+    background-size: cover;
+    background-position: center;
+
+    @media(max-width: $mq-0){ padding-left: $gap-h * 2; }
+    @media(max-width: $mq-1){ display: none; }
+}
+.top{
+    @include flex(flex, space-between, center, row, nowrap);
+    width: 100%;
+    padding: $gap-v $gap-h;
+    @media(max-width: $mq-1){
+        @include flex(flex, flex-start, center, column, wrap);
+        padding: 0;
+    }
+}
+.slider{
+    @include flex(flex, center, center, column, wrap);
+    width: 100%;
+    padding-bottom: $gap-v;
+}
+.footer{
+    @include flex(flex, flex-start, flex-start, column, wrap);
+    width: 100%;
+}

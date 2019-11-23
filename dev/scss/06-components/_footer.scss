@@ -1,0 +1,117 @@
+.assistance{
+    @include flex(flex, space-between, stretch, row, nowrap);
+    width: 100%;
+    padding: $gap-v * 4 $gap-h;
+    background-color: $footer-i;
+
+    @media(max-width: $mq-1){
+        @include flex(flex, flex-start, center, column, wrap);
+        padding: $gap-v * 2 $gap-h;
+    }
+
+    &__container{
+        @include flex(flex, center, center, row, nowrap);
+        width: calc(100% / 3);
+        border-right: 1px solid rgba($black, .2);
+
+        &:nth-of-type(1){ flex-direction: column; }
+        &:nth-last-of-type(1){ border-right: none;}
+
+        @media(max-width: $mq-1){
+            width: 100%;
+            border-right: none;
+            margin-bottom: $gap-v * 2 ;
+        }
+    }
+    &__title{
+        font-size: 14px;
+        line-height: 18px;
+        letter-spacing: 1px;
+        word-spacing: -2px;
+        font-weight: 500;
+        text-align: center;
+        margin-bottom: $gap-v;
+    }
+    &__description{ text-transform: capitalize; }
+    &__img{
+        max-width: 50%;
+
+        @media(max-width: $mq-1){
+            max-width: 250px;
+            width: 70%
+        }
+    }
+}
+.contact{
+    @include flex(flex, flex-start, flex-start, row, nowrap);
+    width: 100%;
+    background-color: $footer-c;
+    padding: $gap-v * 2 $gap-h  $gap-v;
+
+    @media(max-width: $mq-1){
+        @include flex(flex, flex-start, center, column, wrap);
+        padding: $gap-v * 2 $gap-h / 2 * 2 $gap-v;
+    }
+
+    &__form{
+        width: 50%;
+        padding-left: $gap-h * 2;
+
+        @media(max-width: $mq-0){ padding-left: 0;}
+        @media(max-width: $mq-1){
+            width: 100%;
+            padding-left: 0;
+        }
+    }
+    &__container{
+        width: 275px;
+        @media(max-width: $mq-1){ width: 100%;}
+    }
+    &__img{ @include flex(flex, space-between, flex-start, row, nowrap); }
+    &__logo{ width: 120px; }
+    &__icon{
+        height: 20px;
+        width: 20px;
+        object-fit: contain;
+    }
+    &__description{
+        text-transform: none;
+        line-height: 4;
+    }
+}
+.terms{
+    @include flex(flex, flex-start, flex-start, row, nowrap);
+    width: 50%;
+    @media(max-width: $mq-1){
+        width: 100%;
+        @include flex(flex, flex-start, center, column, wrap);
+    }
+    &__list{
+        @include flex(flex, flex-start, flex-start, column, wrap);
+        width: calc(100% / 3);
+        
+        @media(max-width: $mq-1){
+            width: 100%;
+            align-items: center;
+        }
+    }
+    &__title{
+        font-size: 12px;
+        margin-bottom: $gap-v;
+
+        @media(max-width: $mq-1){ margin-top: $gap-v; }
+    }
+    &__description{ text-transform: none; }
+}
+.copy{
+    @include flex(flex, flex-start, flex-end, column, wrap);
+    width: 100%;
+    padding: $gap-v  $gap-h;
+    text-transform: none;
+    background-color: $footer-c;
+
+    @media(max-width: $mq-1){
+        width: 100%;
+        align-items: center;
+    }
+}

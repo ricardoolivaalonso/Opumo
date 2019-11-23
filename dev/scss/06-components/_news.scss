@@ -1,0 +1,10 @@
+.news{
+    &__container{ width: 275px; }
+    &__description{
+        font-size: 14px;
+        line-height: 28px;
+        letter-spacing: 2px;
+        color: $hr;
+        &:nth-last-of-type(1){ margin-bottom: $gap-v; }
+    }
+}

@@ -1,0 +1,51 @@
+.g-text,
+.g-link{
+    text-transform: uppercase;
+    font-size: 12px;
+    line-height: 20px;
+    letter-spacing: 1px;
+}
+.g-link{
+    cursor: pointer;
+    &:hover{
+        color: lighten($black, 50);
+        transition: $transition;
+    }
+}
+.g-icon{
+    height: 15px;
+    width: 15px;
+    object-fit: contain;
+    cursor: pointer;
+    @media(max-width: $mq-1){
+        height: 22px;
+        width: 22px;
+    }
+}
+.form{
+    width: 100%;
+    @media(max-width: $mq-1){ width: 100%; }
+    &__input,
+    &__button{
+        height: 35px;
+        width: 100%;
+        margin-bottom: 5px;
+        border: 1px solid $hr;
+        padding-left: 15px;
+        font-size: 12px;
+        letter-spacing: 1px;
+        font-family: 'Avenir', sans-serif;
+        color: $black;
+        outline: none;
+    }
+    &__button{
+        color: $white;
+        background-color: black;
+        border: 1px solid black;
+    }
+    &__ads{
+        font-size: 9.6px;
+        letter-spacing: 1px;
+        line-height: 0;
+    }
+}

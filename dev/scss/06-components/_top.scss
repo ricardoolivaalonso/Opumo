@@ -1,0 +1,61 @@
+.top{
+    &__container{
+        @include flex(flex, flex-start, center, column, wrap);
+        width: calc(50% - 10px);
+
+        @media(max-width: $mq-1){ width: 100%; }
+    }
+    &__item{
+        width: 100%;
+        position: relative;
+        @include flex(flex, center, center, column, wrap);
+        margin-bottom: $gap-h;
+        cursor: pointer;
+    }
+    &__item:hover &__button{
+        opacity: 1;
+        visibility: visible;
+        transition: $transition;
+    }
+    /************/
+    &__title{
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 18px;
+        letter-spacing: 2.5px;
+        text-transform: uppercase;
+    }
+    &__description{
+        font-size: 12px;
+        font-weight: 400;
+        line-height: 21px;
+        letter-spacing: 1px;
+    }
+    &__img{
+        width: 100%;
+        margin-bottom: 12px;
+    }
+    &__button{
+        position: absolute;
+        top: calc(50% - 50px);
+        min-width: 150px;
+        padding: 12px 20px;
+
+        text-align: center;
+        font-size: 16px;
+        font-size: 400;
+        letter-spacing: 1px;
+
+        color: $black;
+        background-color: $white;
+
+        opacity: 0;
+        visibility: hidden;
+        
+        @media(max-width: $mq-1){
+            opacity: 1;
+            visibility: visible;
+            background-color: rgba($white, .7);
+        }
+    }
+}

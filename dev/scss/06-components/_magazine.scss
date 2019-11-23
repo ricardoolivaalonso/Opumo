@@ -1,0 +1,53 @@
+.magazine{
+    &__hr{
+        width: 100%;
+        border-bottom: .5px solid $hr;
+        margin-bottom: $gap-v;
+    }
+    &__main-title{
+        font-size: 18px;
+        line-height: 32px;
+        letter-spacing: 2px;
+        font-weight: 500;
+        text-transform: uppercase;
+    }
+    &__main-subtitle{
+        font-size: 14px;
+        line-height: 21px;
+        text-transform: capitalize;
+        letter-spacing: 1px;
+        font-weight: 400;
+    }
+    /***********/
+    &__container{
+        @include flex(flex, space-between, center, row, nowrap);
+        width: 100%;
+        margin: $gap-v 0 $gap-v * 2;
+
+        @media(max-width: $mq-1){
+            @include flex(flex, flex-start, center, column, wrap);
+            margin-bottom: 0;
+        }
+    }
+    &__item{
+        width: calc((100% / 3) - 7px);
+
+        @media(max-width: $mq-1){
+            width: 100%;
+            margin-bottom: $gap-v;
+        }
+    }
+    &__img{
+        max-width: 100%;
+        margin-bottom: 7px;
+    }
+    &__title{
+        font-size: 14px;
+        text-transform: none;
+        font-weight: 400;
+    }
+    &__description{
+        font-size: 12px;
+        text-transform: none;
+    }
+}
